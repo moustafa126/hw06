@@ -25,6 +25,8 @@ def str_split(message, separator):
 
     """
     # YOUR CODE GOES HERE #
+    if len(message) == 0:
+        return []
     if len(separator) == 0:
         return [message]
     else:
@@ -53,8 +55,13 @@ def decode(translation, message):
 
     """
     # YOUR CODE GOES HERE #
-    return 
-
+    if len(translation) == 0:
+        return ''
+    temp = message[0]
+    for k, v in translation.items():
+        if temp in k:
+            return decode(translation, message[1:])
+# how do i get it to return the key in translation
 
 # Question 3
 def schedule_periods(n):
@@ -124,7 +131,10 @@ def find_max_recursive(lst):
 
     """
     # YOUR CODE GOES HERE #
-    return
+    if len(lst) == 1:
+        return lst[0]
+    else:
+        return lst[0] if lst[0] > find_max_recursive(lst[1:]) else find_max_recursive(lst[1:])
 
 
 # Question 5
@@ -168,7 +178,11 @@ def fix_list(lst):
 
     """
     # YOUR CODE GOES HERE #
-    return
+    if lst == []:
+        return lst
+    if isinstance(lst[0], list):
+        return fix_list(lst[0]) + fix_list(lst[1:])
+    return lst[:1] + fix_list(lst[1:])
 
 
 # Question 7 (Extra Credit)
