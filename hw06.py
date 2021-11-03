@@ -1,6 +1,6 @@
 """
 DSC 20 Homework 06
-Name: TODO
+Name: Sarah Kim
 PID:  TODO
 """
 
