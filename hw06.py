@@ -1,7 +1,7 @@
 """
 DSC 20 Homework 06
 Name: Sarah Kim
-PID:  TODO
+PID:  A16666099
 """
 
 # Question 1
@@ -25,7 +25,13 @@ def str_split(message, separator):
 
     """
     # YOUR CODE GOES HERE #
-    return
+    if len(separator) == 0:
+        return [message]
+    else:
+        return ([message[:message.index(separator)]] + \
+           str_split(message[message.index(separator)+1:], separator) if separator in message else [message])
+
+
 
 # Question 2
 def decode(translation, message):
