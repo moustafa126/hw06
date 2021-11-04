@@ -1,0 +1,26 @@
+# Question 3
+def schedule_periods(n):
+    """
+    >>> schedule_periods(1)
+    3
+    >>> schedule_periods(0)
+    0
+    >>> schedule_periods(2)
+    7
+    # Add at least 3 doctests below #
+    """
+    # YOUR CODE GOES HERE #
+    return travel(n) + do_task(n)
+
+# Helper functions
+def travel(n):
+    if n<=1:
+      return n
+    else:
+      return travel(1) + do_task(n-1)+1
+
+def do_task(n):
+    if n<=1:
+      return 2*n
+    else:
+      return travel(n-1) + do_task(1)
